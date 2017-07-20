@@ -2,6 +2,12 @@
 
 Test your Firebase database triggers offline
 
+## Installation
+
+```
+npm install --save-dev firebase-mock-functions
+```
+
 ## Example usage
 
 ```javascript
