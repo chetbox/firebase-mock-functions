@@ -1,6 +1,6 @@
 {
   "name": "firebase-mock-functions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Test Firebase database triggers with a mock database",
   "main": "lib/fakeDatabase.js",
   "scripts": {
