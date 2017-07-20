@@ -9,7 +9,9 @@ var chai = require('chai');
 chai.use(require('chai-as-promised'));
 
 var FakeDatabase = require('firebase-mock-functions');
-var db = new FakeDatabase();
+var functions = require('firebase-functions');
+var admin = require('firebase-admin');
+var db = new FakeDatabase(functions, admin);
 db.override();
 db.database.autoFlush(true);
 

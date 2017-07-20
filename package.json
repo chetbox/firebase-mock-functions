@@ -26,12 +26,14 @@
   "dependencies": {
     "firebase-mock": "^1.1.4",
     "lodash": "^4.17.4",
-    "sinon": "^2.3.8",
-    "firebase-functions": "0.6",
-    "firebase-admin": "5"
+    "sinon": "^2.3.8"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-coffeescript": "0.0.15"
+  },
+  "peerDependencies": {
+    "firebase-functions": "0.6",
+    "firebase-admin": "5"
   }
 }

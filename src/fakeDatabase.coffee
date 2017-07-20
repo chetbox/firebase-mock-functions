@@ -6,7 +6,9 @@ admin = require 'firebase-admin'
 
 class FakeDatabase
 
-  constructor: ->
+  constructor: (functions, admin) ->
+    @functions = functions
+    @admin = admin
     @projectName = 'tests'
     @database = new firebaseMock.MockFirebase()
 
@@ -21,8 +23,8 @@ class FakeDatabase
   setFunctionsModule: (@index) ->
 
   override: ->
-    @adminInitStub = sinon.stub admin, 'initializeApp'
-    @configStub = sinon.stub functions, 'config'
+    @adminInitStub = sinon.stub @admin, 'initializeApp'
+    @configStub = sinon.stub @functions, 'config'
       .returns
         firebase:
           databaseURL: "https://#{@projectName}.firebaseio.com"
@@ -46,7 +48,7 @@ class FakeDatabase
     @database.ref path
     .once 'value'
     .then (existingSnapshot) =>
-      deltaSnapshot = new functions.database.DeltaSnapshot fromApp || @database.app , @database.app, existingSnapshot.val(), delta, path
+      deltaSnapshot = new @functions.database.DeltaSnapshot fromApp || @database.app , @database.app, existingSnapshot.val(), delta, path
       @database.ref path
       .set deltaSnapshot.val()
       .then => Promise.all(
