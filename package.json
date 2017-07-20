@@ -1,0 +1,37 @@
+{
+  "name": "firebase-mock-functions",
+  "version": "0.0.1",
+  "description": "Test Firebase database triggers with a mock database",
+  "main": "lib/fakeDatabase.js",
+  "scripts": {
+    "prepare": "./node_modules/gulp/bin/gulp.js build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chetbox/firebase-mock-functions.git"
+  },
+  "keywords": [
+    "firebase",
+    "functions",
+    "testing",
+    "mock"
+  ],
+  "author": "Chetan Padia <chetbox@users.noreply.github.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chetbox/firebase-mock-functions/issues"
+  },
+  "homepage": "https://github.com/chetbox/firebase-mock-functions#readme",
+  "dependencies": {
+    "firebase-mock": "^1.1.4",
+    "lodash": "^4.17.4",
+    "sinon": "^2.3.8",
+    "firebase-functions": "0.6",
+    "firebase-admin": "5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-coffeescript": "0.0.15"
+  }
+}
