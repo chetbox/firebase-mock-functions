@@ -24,6 +24,7 @@ class FakeDatabase
 
   override: ->
     @adminInitStub = sinon.stub @admin, 'initializeApp'
+      .returns @
     @configStub = sinon.stub @functions, 'config'
       .returns
         firebase:
